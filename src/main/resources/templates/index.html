@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1>首页</h1>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>PRICE</td>
+            <td>INSTOCK</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="p:${pList}" >
+            <td th:text="${p.id}">1</td>
+            <td th:text="${p.name}">西游记</td>
+            <td th:text="${p.price}">23</td>
+            <td th:text="${p.inStock}? '有货' : '无货'">有</td>
+        </tr>
+    </tbody>
+    <!--<tfoot>-->
+        <!--<tr>-->
+            <!--<td th:colspan="4">-->
+                <!--<a th:text="${'首页'}" th:href="@{/index/listProductPage(pageNo=1)}">首页</a>-->
+                <!--<a th:text="${'上一页'}" th:href="@{/index/listProductPage(pageNo=${page.nextNo})}">上一页</a>-->
+                <!--<a th:text="${'下一页'}" th:href="@{/index/listProductPage(pageNo=${page.preNo})}">下一页</a>-->
+                <!--<a th:text="${'末页'}" th:href="@{/index/listProductPage(pageNo=${page.pageNo})}">末页</a>-->
+            <!--</td>-->
+        <!--</tr>-->
+    <!--</tfoot>-->
+</table>
+</body>
+</html>
