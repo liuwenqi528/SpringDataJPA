@@ -42,7 +42,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<Product> findAll(Integer pageNo) {
-        Pageable pageable = new PageRequest(pageNo,2);
+        Pageable pageable = new PageRequest(pageNo-1,3);
         return productRepository.findAll( pageable);
     }
 }
