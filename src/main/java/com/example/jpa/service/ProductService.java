@@ -15,4 +15,6 @@ public interface ProductService {
     List<Product> findByNameAndPrice(String name, BigDecimal price);
 
     Page<Product> findAll(Integer pageNo);
+
+    Page<Product> findAll(Product product, Integer pageNo);
 }

@@ -54,6 +54,18 @@ public class IndexController {
         System.out.println("总页数 ===" + pList.getTotalPages());
         return "index";
     }
+    @RequestMapping("byParams")
+    public String listOfPageByParams(Product product,Integer pageNo,Model model){
+        Page<Product> pList = productService.findAll(product,pageNo);
+
+        model.addAttribute("pList", pList);
+
+        return "index";
+    }
+
+
+
+
 
     //    测试JPA根据name属性名称查询Product
     @RequestMapping("/productByName")
